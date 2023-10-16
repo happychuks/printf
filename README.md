@@ -18,10 +18,16 @@ This is a function that produces output according to a format.
   * ```C c```
   * ```C s```
   * ```C %```
-
+* The buffer handling of the C library printf function is not reproduced at this stage
+* The flag characters are not handled at this stage
+* The field width is not handled at this stage
+* Precision is not handled at this stage
+* Length is not handled at this stage
 
 ### 1. Education is when you read the fine print. Experience is what you get if you don't
+
 This is a function that produces output according to a specified format.
+
 * Prototype: ```C int _printf(const char *format, ...);```
 * Returns: the number of characters printed
 * write output to stdout, the standard output stream
@@ -36,5 +42,17 @@ This is a function that produces output according to a specified format.
 * This task is developed without emphasis on handling precision, this puts an exception that it may be handled in one way or another, or completely ignored.
 * This task is developed without emphasis on handling the length modifiers, this puts an exception that it may be handled in one way or another, or completely ignored.
 
-Copyright (c) 2023
+## Copyright protected (c) 2023
+
+* Though this is a public repo, All rights are reserved
+* This software is the property of the two contributors and is protected by copyright laws.
+* Thus, Unauthorized reproduction or distribution of this software, or any portion of it, may result to:
+  * Severe civil and criminal penalties.
+  * Prosecution to the maximum extent possible under the law.
+* This software is a sole effort of the two contributors for educational purposes only.
+* It does not constitute any works from any other contributor(s) or author(s).
+
+### Disclaimer
+
+* This software can only be manipulated or checked, otherwise reviewed by **Alx Team**
 **Thank you for finding interest to check out our awesome project**
