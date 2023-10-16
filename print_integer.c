@@ -2,23 +2,20 @@
 
 /**
  * print_integer - Print an integer
- * @args: The argument list
+ * @value: The integer to be printed
+ * @pb: The PrintBuffer struct to store characters
  * Return: The number of characters printed
  */
-int print_integer(va_list args)
+int print_integer(int value, struct PrintBuffer *pb)
 {
-	int value;
-	/* Extract an integer argument from the va_list named 'args' */
-	value = va_arg(args, int);
-
 	if (value < 0)
 	{
-		_putchar('-');  /* Print the negative sign */
-		return (1 + print_int_base((unsigned int)(-value), 10, 0));
+		_putchar('-', pb);  /* Print the negative sign */
+		return (1 + print_int_base((unsigned int)(-value), 10, 0, pb));
 		/* Print the absolute value and return the number of characters printed */
 	}
 
 	/* If the value is non-negative, simply print it in base 10 */
-	return (print_int_base((unsigned int)value, 10, 0));
+	return (print_int_base((unsigned int)value, 10, 0, pb));
 	/* Print the value and return the number of characters printed */
 }

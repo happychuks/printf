@@ -67,6 +67,10 @@ Unknown:[%r]
 1100010
 ```
 
+## 4. Nothing in fine print is ever good news
+
+* In this section, we use a local buffer of 1024 chars in order to minimize write function calls.
+
 ## Copyright protected (c) 2023
 
 * Though this is a public repo, All rights are reserved

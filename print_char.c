@@ -2,17 +2,15 @@
 
 /**
  * print_char - Print a character
- * @args: Arguments from va_list
+ * @c: The character to be printed
+ * @pb: The PrintBuffer struct to store characters
  * Return: The number of characters printed
  */
 
-int print_char(va_list args)
+int print_char(char c, struct PrintBuffer *pb)
 {
-	/* Retrieve the character argument from va_list*/
-	char c = va_arg(args, int);
-
 	/*Cal _putchar to print the character*/
-	_putchar(c);
+	_putchar(c, pb);
 
 	/*Return 1, indicating that one character was printed*/
 	return (1);

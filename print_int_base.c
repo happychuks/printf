@@ -4,9 +4,10 @@
  * @n: The integer to be printed
  * @base: The base (8 for octal, 10 for decimal, 16 for hexadecimal)
  * @_case: Use _case letters for hexadecimal (1) or lowercase (0)
+ * @pb: The PrintBuffer struct to store characters
  * Return: The number of characters printed
  */
-int print_int_base(unsigned int n, int base, int _case)
+int print_int_base(unsigned int n, int base, int _case, struct PrintBuffer *pb)
 {
 	char buffer[32]; /*Buffer to store converted integer*/
 	char digits[] = "0123456789ABCDEF"; /*Digits used for conversion*/
@@ -23,7 +24,7 @@ int print_int_base(unsigned int n, int base, int _case)
 	/*Handle the special case when n == 0*/
 	if (n == 0)
 	{
-		_putchar('0');
+		_putchar('0', pb);
 		return (1);
 	}
 	while (n != 0)/*Converts the integer to the specified base*/
@@ -34,6 +35,6 @@ int print_int_base(unsigned int n, int base, int _case)
 	}
 	/*Print the characters in reverse order to get the correct representation*/
 	for (j = i - 1; j >= 0; j--)
-		_putchar(buffer[j]);
-	return (i);
+		_putchar(buffer[j], pb);
+	return (i + 1);
 }
