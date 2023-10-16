@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * print_int_base - Prints an integer in the specified base
  * @n: The integer to be printed
@@ -7,16 +6,17 @@
  * @_case: Use _case letters for hexadecimal (1) or lowercase (0)
  * Return: The number of characters printed
  */
-
 int print_int_base(unsigned int n, int base, int _case)
 {
 	char buffer[32]; /*Buffer to store converted integer*/
 	char digits[] = "0123456789ABCDEF"; /*Digits used for conversion*/
 	int i, j, digit;
 
+	if (base < 2 || base > 16)
+		return (0); /* Unsupported base, return 0 characters printed */
 	i = 0;
-	if (_case == 0)
-	{/*If lowercase conversion is requested, adjust the digits array*/
+	if (_case == 0 && base == 16)
+	{/* If lowercase conversion is requested for hexadecimal */
 		for (j = 10; j < 16; j++)
 			digits[j] = digits[j] + 32;
 	}
@@ -26,8 +26,7 @@ int print_int_base(unsigned int n, int base, int _case)
 		_putchar('0');
 		return (1);
 	}
-	/*Converts the integer to the specified base*/
-	while (n != 0)
+	while (n != 0)/*Converts the integer to the specified base*/
 	{
 		digit = n % base;
 		buffer[i++] = digits[digit];
@@ -36,6 +35,5 @@ int print_int_base(unsigned int n, int base, int _case)
 	/*Print the characters in reverse order to get the correct representation*/
 	for (j = i - 1; j >= 0; j--)
 		_putchar(buffer[j]);
-
 	return (i);
 }

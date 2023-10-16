@@ -18,6 +18,8 @@ int _elif_helper(char format, va_list args)
 		case 'd':
 		case 'i':
 			return (print_integer(args));
+		case 'b': /* Handle binary conversion */
+			return (print_int_base(va_arg(args, unsigned int), 2, 0));
 		default:
 			_putchar('%');
 			_putchar(format);
