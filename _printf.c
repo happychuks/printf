@@ -6,7 +6,7 @@
  *
  * This function processes arguments and throws them to the stdout
  *
- * @format: The format string is a character that holdhe specifier with a 
+ * @format: The format string is a character that holdhe specifier with a
  * '%' character, and followed by a specific conversion character
  * (e.g., %s for strings, %i for integers)
  *

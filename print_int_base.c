@@ -36,6 +36,6 @@ int print_int_base(unsigned int n, int base, int _case)
 	/*Print the characters in reverse order to get the correct representation*/
 	for (j = i - 1; j >= 0; j--)
 		_putchar(buffer[j]);
-	
+
 	return (i);
 }
