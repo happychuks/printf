@@ -19,6 +19,8 @@ char _putchar(char c);
 int _printf(const char *str, ...);
 int print_char(va_list args);
 int print_string(va_list args);
+int print_integer(va_list args);
+int print_int_base(unsigned int n, int base, int _case);
 
 
 /*

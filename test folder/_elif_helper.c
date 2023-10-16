@@ -15,6 +15,9 @@ int _elif_helper(char format, va_list args)
 			return (print_char(args));
 		case 's':
 			return (print_string(args));
+		case 'd':
+		case 'i':
+			return (print_integer(args));
 		default:
 			_putchar('%');
 			_putchar(format);
