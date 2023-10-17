@@ -15,9 +15,9 @@ This is a function that produces output according to a format.
 * write output to stdout, the standard output stream
 * ```format``` is a character string. The format string is composed of zero or more directives. See  ```man 3 printf``` for more detail.
 * The following conversion specifiers are handled in this task:
-  * ```c```
-  * ```s```
-  * ```%```
+  * ```c``` Prototype: ```int print_char(char c, struct PrintBuffer *pb);```
+  * ```s``` Prototype: ```int print_string(char *str, struct PrintBuffer *pb);```
+  * ```%``` Prototype: ```int print_percent(struct PrintBuffer *pb);```
 * The buffer handling of the C library printf function is not reproduced at this stage
 * The flag characters are not handled at this stage
 * The field width is not handled at this stage
@@ -33,14 +33,24 @@ This is a function that produces output according to a specified format.
 * write output to stdout, the standard output stream
 * ```format``` is a character string. The format string is composed of zero or more directives. See  ```man 3 printf``` for more detail.
 * The following conversion specifiers are handled in this task:
-  * ```d```
-  * ```i```
+  * ```d``` Prototype: ```int print_integer(int value, struct PrintBuffer *pb);```
+  * ```i``` Prototype: ```int print_integer(int value, struct PrintBuffer *pb);```
 
 ### 2. With a face like mine, I do better in print
 
 This function handles the specified format:
-* Prototype: ```int print_unsigned_decimal(unsigned int n, struct PrintBuffer *pb);```
+* Prototype: ```print_binary(unsigned int n, struct PrintBuffer *pb);```
+* Returns: the formatted unsigned decimal output
   * ```b:``` the unsigned int is converted to binary
+
+### 3. What one has not experienced, one will never understand in print 
+This function handles the specified format below:
+  * ```u``` Prototype: ```int print_unsigned_decimal(unsigned int n, struct PrintBuffer *pb);```
+  * ```o``` Prototype: ```int print_octal(unsigned int n, struct PrintBuffer *pb);```
+  * ```x``` Prototype: ```int print_lowercase_hexadecimal(unsigned int n, struct PrintBuffer *pb);```
+  * ```X``` Prototype: ```int print_uppercase_hexadecimal(unsigned int n, struct PrintBuffer *pb);```
+* Returns: the formatted specifier output
+
 
 * This task is developed without emphasis on the buffer handling of the C library printf function, this puts an exception that it may be handled in one way or another, or completely ignored.
 * This task is developed without emphasis on handling the flag characters, this puts an exception that it may be handled in one way or another, or completely ignored.
