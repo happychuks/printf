@@ -59,7 +59,11 @@ Added in ```main.h``` as ```#define WRITE_BUF_SIZE 1024```
 ### 5. My weakness is wearing too much leopard print
 This handles the following specifier
   * ```S``` : prints the string.
-  * Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: ```\x```, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
+
+### 6. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print
+This function handles the specified format below:
+  * ```p``` Prototype: ```int print_address(unsigned long n, struct PrintBuffer *pb);```
+
 
 
 * This task is developed without emphasis on the buffer handling of the C library printf function, this puts an exception that it may be handled in one way or another, or completely ignored.
