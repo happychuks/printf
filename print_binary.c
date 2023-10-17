@@ -25,9 +25,7 @@ int print_binary(unsigned int n, struct PrintBuffer *pb)
 	}
 
 	for (i = i - 1; i >= 0; i--)
-	{
 		_putchar(buffer[i], pb);
-	}
 
 	return (i); /*Count of characters printed.*/
 }

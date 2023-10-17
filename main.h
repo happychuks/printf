@@ -23,6 +23,7 @@ int print_integer(int value, struct PrintBuffer *pb);
 int print_int_base(unsigned int n, int base, int _case,
 struct PrintBuffer *pb);
 int print_binary(unsigned int n, struct PrintBuffer *pb);
+int print_percent(struct PrintBuffer *pb);
 
 /* Helper Functions */
 int _elif(const char *format, va_list args,

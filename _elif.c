@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _elif - printf
  * @format: The format string
@@ -7,7 +6,6 @@
  * @pb: The PrintBuffer struct to store characters
  * Return: The number of characters printed
  */
-
 int _elif(const char *format, va_list args, struct PrintBuffer *pb)
 {
 	int printed_chars = 0;

@@ -32,8 +32,7 @@ int print_int_base(unsigned int n, int base, int _case, struct PrintBuffer *pb)
 		digit = n % base;
 		buffer[i++] = digits[digit];
 		n /= base;
-	}
-	/*Print the characters in reverse order to get the correct representation*/
+	} /*Print the characters in reverse order to get the correct representation*/
 	for (j = i - 1; j >= 0; j--)
 		_putchar(buffer[j], pb);
 	return (i + 1);
