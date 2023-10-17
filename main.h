@@ -1,16 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
-/**
- * main.h - Header file for custom printf functions
- * This header file contains function prototypes
- * and necessary includes for the _printf function
- * Created by a combined effort from Happy & Adioz
- */
-
+/* main.h - Header file Created by a combined effort from Happy & Adioz */
 #include <unistd.h>
 #include <stdarg.h>
 #define WRITE_BUF_SIZE 1024
-
 /**
  * struct PrintBuffer - This is the data structure
  * @buffer: A character array used to store characters before printing.
@@ -21,10 +14,7 @@ struct PrintBuffer
 	char buffer[WRITE_BUF_SIZE]; /* Character buffer.*/
 	int buf_index; /* index in the character buffer.*/
 };
-
-/*
- * printing functions
- */
+/* printing functions */
 char _putchar(char c, struct PrintBuffer *pb);
 int _printf(const char *str, ...);
 int print_char(char c, struct PrintBuffer *pb);
@@ -34,9 +24,7 @@ int print_int_base(unsigned int n, int base, int _case,
 struct PrintBuffer *pb);
 int print_binary(unsigned int n, struct PrintBuffer *pb);
 
-/*
- * Helper Functions
- */
+/* Helper Functions */
 int _elif(const char *format, va_list args,
 struct PrintBuffer *pb);
 int _elif_helper(char format, va_list args, struct PrintBuffer *pb);
