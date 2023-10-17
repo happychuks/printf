@@ -20,6 +20,7 @@ char _putchar(char c, struct PrintBuffer *pb);
 int _printf(const char *str, ...);
 int print_char(char c, struct PrintBuffer *pb);
 int print_string(char *str, struct PrintBuffer *pb);
+int print_rot13(char *str, struct PrintBuffer *pb);
 int print_integer(int value, struct PrintBuffer *pb);
 int print_uppercase_hexadecimal(unsigned int n, struct PrintBuffer *pb);
 int print_lowercase_hexadecimal(unsigned int n, struct PrintBuffer *pb);

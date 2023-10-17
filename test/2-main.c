@@ -8,5 +8,6 @@
 int main(void)
 {
 	_printf("%b\n", 98);
+	_printf("%R\n", "HELLO");
 	return (0);
 }

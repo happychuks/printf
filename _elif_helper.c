@@ -17,6 +17,7 @@ int _elif_helper(char format, va_list args, struct PrintBuffer *pb)
 		case '%':
 		case 'd':
 		case 'i':
+		case 'R':
 		{
 			return (printed_chars += _elif_switch_one(format, args, pb));
 		}
