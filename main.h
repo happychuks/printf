@@ -13,18 +13,21 @@ struct PrintBuffer
 {
 	char buffer[WRITE_BUF_SIZE]; /* Character buffer.*/
 	int buf_index; /* index in the character buffer.*/
-};
-/* printing functions */
+}; /* printing functions */
 char _putchar(char c, struct PrintBuffer *pb);
 int _printf(const char *str, ...);
 int print_char(char c, struct PrintBuffer *pb);
 int print_string(char *str, struct PrintBuffer *pb);
 int print_integer(int value, struct PrintBuffer *pb);
+int print_uppercase_hexadecimal(unsigned int n, struct PrintBuffer *pb);
+int print_lowercase_hexadecimal(unsigned int n, struct PrintBuffer *pb);
+int print_address(unsigned long n, struct PrintBuffer *pb);
 int print_int_base(unsigned int n, int base, int _case,
 struct PrintBuffer *pb);
 int print_binary(unsigned int n, struct PrintBuffer *pb);
 int print_percent(struct PrintBuffer *pb);
-
+int print_octal(unsigned int n, struct PrintBuffer *pb);
+int print_unsigned_decimal(unsigned int n, struct PrintBuffer *pb);
 /* Helper Functions */
 int _elif(const char *format, va_list args,
 struct PrintBuffer *pb);
