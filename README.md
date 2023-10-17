@@ -36,6 +36,12 @@ This is a function that produces output according to a specified format.
   * ```d```
   * ```i```
 
+### 2. With a face like mine, I do better in print
+
+This function handles the specified format:
+* Prototype: ```int print_unsigned_decimal(unsigned int n, struct PrintBuffer *pb);```
+  * ```b:``` the unsigned int is converted to binary
+
 * This task is developed without emphasis on the buffer handling of the C library printf function, this puts an exception that it may be handled in one way or another, or completely ignored.
 * This task is developed without emphasis on handling the flag characters, this puts an exception that it may be handled in one way or another, or completely ignored.
 * This task is developed without emphasis on handling field width, this puts an exception that it may be handled in one way or another, or completely ignored.
