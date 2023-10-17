@@ -8,6 +8,6 @@
 int main(void)
 {
 	_printf("%b\n", 98);
-	_printf("%R\n", "HELLO");
+	_printf("%R || %r\n", "HELLO", "WORLD");
 	return (0);
 }

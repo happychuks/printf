@@ -29,6 +29,12 @@ int _elif_switch_one(char format, va_list args, struct PrintBuffer *pb)
 
 		printed_chars += print_rot13(str, pb);
 	}
+	else if (format == 'r')
+	{
+		char *str = va_arg(args, char *);
+
+		printed_chars += print_strev(str, pb);
+	}
 	else if (format == '%')
 	{
 		printed_chars += print_percent(pb);
