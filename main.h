@@ -7,8 +7,6 @@
  * Created by a combined effort from Happy & Adioz
  */
 
-#include <limits.h>
-#include <stdio.h>
 #include <unistd.h>
 #include <stdarg.h>
 #define WRITE_BUF_SIZE 1024
