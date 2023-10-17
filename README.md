@@ -43,7 +43,7 @@ This function handles the specified format:
 * Returns: the formatted unsigned decimal output
   * ```b:``` the unsigned int is converted to binary
 
-### 3. What one has not experienced, one will never understand in print 
+### 3. What one has not experienced, one will never understand in print
 This function handles the specified format below:
   * ```u``` Prototype: ```int print_unsigned_decimal(unsigned int n, struct PrintBuffer *pb);```
   * ```o``` Prototype: ```int print_octal(unsigned int n, struct PrintBuffer *pb);```
@@ -64,6 +64,13 @@ This handles the following specifier
 This function handles the specified format below:
   * ```p``` Prototype: ```int print_address(unsigned long n, struct PrintBuffer *pb);```
 
+### 13. Print is the sharpest and the strongest weapon of our party
+This function prints the string in reverse
+  * ```r```: Prototype: ```int print_strev(char *str, struct PrintBuffer *pb);```
+
+### 14. The flood of print has turned reading into a process of gulping rather than savoring
+This function converts and prints the string in rot13'ed format
+  * ```R```: Prototype: ```int print_rot13(char *str, struct PrintBuffer *pb);```
 
 
 * This task is developed without emphasis on the buffer handling of the C library printf function, this puts an exception that it may be handled in one way or another, or completely ignored.
