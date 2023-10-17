@@ -34,7 +34,7 @@ int _elif_helper(char format, va_list args, struct PrintBuffer *pb)
 
 		printed_chars += print_binary(n, pb);
 	}
-	else if (formart == '%')
+	else if (format == '%')
 	{
 		printed_chars += print_percent(pb);
 	}
