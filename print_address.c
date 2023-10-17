@@ -1,7 +1,4 @@
 #include "main.h"
-#include <limits.h>
-
-#define ADDR(x)((x < 10) ? x + '0' : x - 10 + 'a')
 /**
  * print_address - Prints the hexadecimal representation of an address
  * @n: The address to be printed
@@ -40,26 +37,4 @@ int print_address(unsigned long n, struct PrintBuffer *pb)
 		}
 	}
 	return (count);
-}
-
-/**
- * print_lowercase_hexadecimal - Print an hexa in lowercase
- * @n: The integer to be printed
- * @pb: The PrintBuffer struct to store characters
- * Return: The number of characters printed
- */
-int print_lowercase_hexadecimal(unsigned int n, struct PrintBuffer *pb)
-{
-	return (print_int_base(n, 16, 0, pb));
-}
-
-/**
- * print_uppercase_hexadecimal - Print an hexa in uppercase
- * @n: The integer to be printed
- * @pb: The PrintBuffer struct to store characters
- * Return: The number of characters printed
- */
-int print_uppercase_hexadecimal(unsigned int n, struct PrintBuffer *pb)
-{
-	return (print_int_base(n, 16, 1, pb));
 }
