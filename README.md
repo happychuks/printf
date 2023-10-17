@@ -51,6 +51,16 @@ This function handles the specified format below:
   * ```X``` Prototype: ```int print_uppercase_hexadecimal(unsigned int n, struct PrintBuffer *pb);```
 * Returns: the formatted specifier output
 
+### 4. Nothing in fine print is ever good news
+
+This Use a local buffer of 1024 chars in order to call ```write``` as little as possible.
+Added in ```main.h``` as ```#define WRITE_BUF_SIZE 1024```
+
+### 5. My weakness is wearing too much leopard print
+This handles the following specifier
+  * ```S``` : prints the string.
+  * Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: ```\x```, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
+
 
 * This task is developed without emphasis on the buffer handling of the C library printf function, this puts an exception that it may be handled in one way or another, or completely ignored.
 * This task is developed without emphasis on handling the flag characters, this puts an exception that it may be handled in one way or another, or completely ignored.
