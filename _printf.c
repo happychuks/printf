@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _printf - prints and input into the standard output
+ * _printf - prints and input into the stdout
  * @format: the format string
  * Return: number of bytes printed
  */
@@ -14,7 +14,6 @@ int _printf(const char *format, ...)
 	params_t params = PARAMS_INIT;
 
 	va_start(ap, format);
-
 	if (!format || (format[0] == '%' && !format[1]))/* checking for NULL char */
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
@@ -30,9 +29,7 @@ int _printf(const char *format, ...)
 		start = p;
 		p++;
 		while (get_flag(p, &params)) /* while char at p is flag character */
-		{
 			p++; /* next character */
-		}
 		p = get_width(p, &params, ap);
 		p = get_precision(p, &params, ap);
 		if (get_modifier(p, &params))

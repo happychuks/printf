@@ -45,5 +45,18 @@ int main(void)
 	_printf("Unknown:[%r]\n");
 	printf("Unknown:[%r]\n");
 	_printf("%b\n", 98);
+	printf("%b\n", 98);
+	_printf("%.9s", "Best School !\n");
+	_printf("\n");
+	printf("%.9s", "Best School !\n");
+	_printf("\n");
+	_printf("%R || %r\n", "HELLO", "WORLD");
+	_printf("\n");
+	printf("%R || %r\n", "HELLO", "WORLD");
+	_printf("\n");
+	_printf("%.*s", 6, "Best School !\n");
+	_printf("\n");
+	printf("%.*s", 6, "Best School !\n");
+	_printf("\n");
 	return (0);
 }
