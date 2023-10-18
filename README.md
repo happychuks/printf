@@ -6,6 +6,8 @@
 
 ## Tasks
 
+![plot](./test/printf.png)
+
 ### 0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
 
 This is a function that produces output according to a format.
@@ -39,12 +41,14 @@ This is a function that produces output according to a specified format.
 ### 2. With a face like mine, I do better in print
 
 This function handles the specified format:
+
 * Prototype: ```int print_binary(va_list ap, params_t *params);```
 * Returns: the formatted unsigned decimal output
   * ```b:``` the unsigned int is converted to binary
 
 ### 3. What one has not experienced, one will never understand in print
-This function handles the specified format below:
+
+* This function handles the specified format below:
   * ```u``` Prototype: ```int print_unsigned(va_list ap, params_t *params);```
   * ```o``` Prototype: ```int print_octal(va_list ap, params_t *params);```
   * ```x``` Prototype: ```int print_hex(va_list ap, params_t *params);```
@@ -57,50 +61,60 @@ This Use a local buffer of 1024 chars in order to call ```write``` as little as 
 Added in ```main.h``` as ```#define WRITE_BUF_SIZE 1024```
 
 ### 5. My weakness is wearing too much leopard print
-This handles the following specifier
+
+* This handles the following specifier
   * ```S``` : prints the string. Prototype: ```int print_S(va_list ap, params_t *params);```
 
 ### 6. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print
+
 This function handles the specified format below:
-  * ```p``` Prototype: ```int print_address(va_list ap, params_t *params);```
+
+* ```p``` Prototype: ```int print_address(va_list ap, params_t *params);```
 
 ### 7. The big print gives and the small print takes away
-This function handles the following flag characters for non-custom conversion specifiers
+
+* This function handles the following flag characters for non-custom conversion specifiers
   * Prototype: ```int get_flag(char *s, params_t *params);```
   * ```+```
   * ```space```
   * ```#```
 
 ### 8. Sarcasm is lost in print
-This function handles the following length modifiers
+
+* This function handles the following length modifiers
   * Prototype: ```int get_modifier(char *s, params_t *params);```
   * ```l```
   * ```h```
 
 ### 9. Print some money and give it to us for the rain forests
-This function handles width for non-custom conversion specifier
+
+* This function handles width for non-custom conversion specifier
   * Prototype: ```char *get_width(char *s, params_t *params, va_list ap);```
 
-### 10. The negative is the equivalent of the composer's score, and the print the performance 
-This function handles precision for non-custom conversion specifiers
+### 10. The negative is the equivalent of the composer's score, and the print the performance
+
+* This function handles precision for non-custom conversion specifiers
   * Prototype: ```char *get_precision(char *s, params_t *params, va_list ap);```
 
 ### 11. It's depressing when you're still around and your albums are out of print
-This function handles the ```0``` flag character for non-custom conversion specifiers
+
+* This function handles the ```0``` flag character for non-custom conversion specifiers
   * ```0``` : Prototype: ```int get_flag(char *s, params_t *params);```
 
 ### 12. Every time that I wanted to give up, if I saw an interesting textile, print what ever, suddenly I would see a collection
-This function handles the ```-``` flag character for non-custom conversion specifiers
+
+* This function handles the ```-``` flag character for non-custom conversion specifiers
   * ```-``` : Prototype: ```int get_flag(char *s, params_t *params);```
 
 ### 13. Print is the sharpest and the strongest weapon of our party
-This function prints the string in reverse
+
+* This function prints the string in reverse
   * ```r```: Prototype: ```int print_rev(va_list ap, params_t *params);```
 
 ### 14. The flood of print has turned reading into a process of gulping rather than savoring
-This function converts and prints the string in rot13'ed format
-  * ```R```: Prototype: ```int print_rot13(va_list ap, params_t *params);```
 
+* This function converts and prints the string in rot13'ed format
+  * ```R```: Prototype: ```int print_rot13(va_list ap, params_t *params);```
 
 ## Copyright protected (c) 2023
 
