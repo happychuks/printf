@@ -2,7 +2,7 @@
 
 ## An ALX team project written by Happy Chukwuma and Adioz Daniel
 
-😇😇
+😇😇😇
 
 ## Tasks
 
@@ -15,9 +15,9 @@ This is a function that produces output according to a format.
 * write output to stdout, the standard output stream
 * ```format``` is a character string. The format string is composed of zero or more directives. See  ```man 3 printf``` for more detail.
 * The following conversion specifiers are handled in this task:
-  * ```c``` Prototype: ```int print_char(char c, struct PrintBuffer *pb);```
-  * ```s``` Prototype: ```int print_string(char *str, struct PrintBuffer *pb);```
-  * ```%``` Prototype: ```int print_percent(struct PrintBuffer *pb);```
+  * ```c``` Prototype: ```int print_char(va_list ap, params_t *params);```
+  * ```s``` Prototype: ```int print_string(va_list ap, params_t *params);```
+  * ```%``` Prototype: ```int print_percent(va_list ap, params_t *params);```
 * The buffer handling of the C library printf function is not reproduced at this stage
 * The flag characters are not handled at this stage
 * The field width is not handled at this stage
@@ -33,22 +33,22 @@ This is a function that produces output according to a specified format.
 * write output to stdout, the standard output stream
 * ```format``` is a character string. The format string is composed of zero or more directives. See  ```man 3 printf``` for more detail.
 * The following conversion specifiers are handled in this task:
-  * ```d``` Prototype: ```int print_integer(int value, struct PrintBuffer *pb);```
-  * ```i``` Prototype: ```int print_integer(int value, struct PrintBuffer *pb);```
+  * ```d``` Prototype: ```int print_int(va_list ap, params_t *params);```
+  * ```i``` Prototype: ```int print_int(va_list ap, params_t *params);```
 
 ### 2. With a face like mine, I do better in print
 
 This function handles the specified format:
-* Prototype: ```print_binary(unsigned int n, struct PrintBuffer *pb);```
+* Prototype: ```int print_binary(va_list ap, params_t *params);```
 * Returns: the formatted unsigned decimal output
   * ```b:``` the unsigned int is converted to binary
 
 ### 3. What one has not experienced, one will never understand in print
 This function handles the specified format below:
-  * ```u``` Prototype: ```int print_unsigned_decimal(unsigned int n, struct PrintBuffer *pb);```
-  * ```o``` Prototype: ```int print_octal(unsigned int n, struct PrintBuffer *pb);```
-  * ```x``` Prototype: ```int print_lowercase_hexadecimal(unsigned int n, struct PrintBuffer *pb);```
-  * ```X``` Prototype: ```int print_uppercase_hexadecimal(unsigned int n, struct PrintBuffer *pb);```
+  * ```u``` Prototype: ```int print_unsigned(va_list ap, params_t *params);```
+  * ```o``` Prototype: ```int print_octal(va_list ap, params_t *params);```
+  * ```x``` Prototype: ```int print_hex(va_list ap, params_t *params);```
+  * ```X``` Prototype: ```int print_HEX(va_list ap, params_t *params);```
 * Returns: the formatted specifier output
 
 ### 4. Nothing in fine print is ever good news
@@ -58,26 +58,49 @@ Added in ```main.h``` as ```#define WRITE_BUF_SIZE 1024```
 
 ### 5. My weakness is wearing too much leopard print
 This handles the following specifier
-  * ```S``` : prints the string.
+  * ```S``` : prints the string. Prototype: ```int print_S(va_list ap, params_t *params);```
 
 ### 6. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print
 This function handles the specified format below:
-  * ```p``` Prototype: ```int print_address(unsigned long n, struct PrintBuffer *pb);```
+  * ```p``` Prototype: ```int print_address(va_list ap, params_t *params);```
+
+### 7. The big print gives and the small print takes away
+This function handles the following flag characters for non-custom conversion specifiers
+  * Prototype: ```int get_flag(char *s, params_t *params);```
+  * ```+```
+  * ```space```
+  * ```#```
+
+### 8. Sarcasm is lost in print
+This function handles the following length modifiers
+  * Prototype: ```int get_modifier(char *s, params_t *params);```
+  * ```l```
+  * ```h```
+
+### 9. Print some money and give it to us for the rain forests
+This function handles width for non-custom conversion specifier
+  * Prototype: ```char *get_width(char *s, params_t *params, va_list ap);```
+
+### 10. The negative is the equivalent of the composer's score, and the print the performance 
+This function handles precision for non-custom conversion specifiers
+  * Prototype: ```char *get_precision(char *s, params_t *params, va_list ap);```
+
+### 11. It's depressing when you're still around and your albums are out of print
+This function handles the ```0``` flag character for non-custom conversion specifiers
+  * ```0``` : Prototype: ```int get_flag(char *s, params_t *params);```
+
+### 12. Every time that I wanted to give up, if I saw an interesting textile, print what ever, suddenly I would see a collection
+This function handles the ```-``` flag character for non-custom conversion specifiers
+  * ```-``` : Prototype: ```int get_flag(char *s, params_t *params);```
 
 ### 13. Print is the sharpest and the strongest weapon of our party
 This function prints the string in reverse
-  * ```r```: Prototype: ```int print_strev(char *str, struct PrintBuffer *pb);```
+  * ```r```: Prototype: ```int print_rev(va_list ap, params_t *params);```
 
 ### 14. The flood of print has turned reading into a process of gulping rather than savoring
 This function converts and prints the string in rot13'ed format
-  * ```R```: Prototype: ```int print_rot13(char *str, struct PrintBuffer *pb);```
+  * ```R```: Prototype: ```int print_rot13(va_list ap, params_t *params);```
 
-
-* This task is developed without emphasis on the buffer handling of the C library printf function, this puts an exception that it may be handled in one way or another, or completely ignored.
-* This task is developed without emphasis on handling the flag characters, this puts an exception that it may be handled in one way or another, or completely ignored.
-* This task is developed without emphasis on handling field width, this puts an exception that it may be handled in one way or another, or completely ignored.
-* This task is developed without emphasis on handling precision, this puts an exception that it may be handled in one way or another, or completely ignored.
-* This task is developed without emphasis on handling the length modifiers, this puts an exception that it may be handled in one way or another, or completely ignored.
 
 ## Copyright protected (c) 2023
 

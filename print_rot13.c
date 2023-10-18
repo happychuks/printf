@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_rot13 - prints string in rot13
+ * print_rot13 - prints string in rot13 format by shifting char by 13
  * @ap: string
  * @params: the parameters struct
  *

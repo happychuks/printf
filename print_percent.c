@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_percent - prints string
+ * print_percent - prints the % character
  * @ap: argument pointer
  * @params: the parameters struct
  * Return: number chars printed

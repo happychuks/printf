@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * get_specifier - finds the format function
- * @s: string of the format
+ * @s: string to be formatted
  * Return: the number of bytes printed
  */
 int (*get_specifier(char *s))(va_list ap, params_t *params)
