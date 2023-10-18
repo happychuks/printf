@@ -40,7 +40,7 @@
 
 typedef struct parameters
 {
-	unsigned int unsign			: 1;
+	unsigned int unsign		: 1;
 
 	unsigned int plus_flag		: 1;
 	unsigned int space_flag		: 1;
@@ -111,10 +111,10 @@ int print_number_left_shift(char *str, params_t *params);
 /* params.c module */
 void init_params(params_t *params, va_list ap);
 
-/* string_fields.c modoule */
-char *get_precision(char *p, params_t *params, va_list ap);
+/* string_fields.c module */
+char *get_precision(char *s, params_t *params, va_list ap);
 
 /* _prinf.c module */
 int _printf(const char *format, ...);
 
-#endif /*By Happy & Adioz*/
+#endif /*By Happy Chukwuma and Adioz Daniel*/
