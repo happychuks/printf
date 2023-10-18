@@ -1,17 +1,41 @@
 #include "main.h"
+/**
+ * print_char - prints character
+ * @ap: argument pointer
+ * @params: the parameters struct
+ *
+ * Return: number chars printed
+ */
+int print_char(va_list ap, params_t *params)
+{
+	char pad_char = ' ';
+	unsigned int pad = 1, sum = 0, ch = va_arg(ap, int);
+
+	if (params->minus_flag)
+		sum += _putchar(ch);
+	while (pad++ < params->width)
+		sum += _putchar(pad_char);
+	if (!params->minus_flag)
+		sum += _putchar(ch);
+	return (sum);
+}
 
 /**
- * print_char - Print a character
- * @c: The character to be printed
- * @pb: The PrintBuffer struct to store characters
- * Return: The number of characters printed
+ * print_int - prints integer
+ * @ap: argument pointer
+ * @params: the parameters struct
+ *
+ * Return: number chars printed
  */
-
-int print_char(char c, struct PrintBuffer *pb)
+int print_int(va_list ap, params_t *params)
 {
-	/*Cal _putchar to print the character*/
-	_putchar(c, pb);
+	long l;
 
-	/*Return 1, indicating that one character was printed*/
-	return (1);
+	if (params->l_modifier)
+		l = va_arg(ap, long);
+	else if (params->h_modifier)
+		l = (short int)va_arg(ap, int);
+	else
+		l = (int)va_arg(ap, int);
+	return (print_number(convert(l, 10, 0, params), params));
 }

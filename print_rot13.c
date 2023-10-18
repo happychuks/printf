@@ -1,36 +1,33 @@
 #include "main.h"
 
 /**
- * print_rot13 - prints string in rot13 format
- * @str: The input string to be printed
- * @pb: The PrintBuffer struct to store characters
- * Return: The number of characters printed
+ * print_rot13 - prints string in rot13
+ * @ap: string
+ * @params: the parameters struct
+ *
+ * Return: number bytes printed
  */
-
-int print_rot13(char *str, struct PrintBuffer *pb)
+int print_rot13(va_list ap, params_t *params)
 {
 	int i, index;
 	int count = 0;
-
-	/*
-	 * This array contains the alphabet characters already converted
-	 * to rot13 format by shifting each character to 13 positions forward.
-	 */
-	char arr[] = "NOPQRSTUVWXYZABCDEFGHIJKLM      nopqrstuvwxyzabcdefghijklm";
+	char arr[] =
+		"NOPQRSTUVWXYZABCDEFGHIJKLM      nopqrstuvwxyzabcdefghijklm";
+	char *a = va_arg(ap, char *);
+	(void)params;
 
 	i = 0;
 	index = 0;
-
-	while (str[i])
+	while (a[i])
 	{
-		if ((str[i] >= 'A' && str[i] <= 'Z')
-		    || (str[i] >= 'a' && str[i] <= 'z'))
+		if ((a[i] >= 'A' && a[i] <= 'Z')
+		    || (a[i] >= 'a' && a[i] <= 'z'))
 		{
-			index = str[i] - 65;
-			count += _putchar(arr[index], pb);
+			index = a[i] - 65;
+			count += _putchar(arr[index]);
 		}
 		else
-			count += _putchar(str[i], pb);
+			count += _putchar(a[i]);
 		i++;
 	}
 	return (count);

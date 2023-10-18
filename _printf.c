@@ -1,37 +1,49 @@
 #include "main.h"
 /**
- * _printf - The main custom printf function that formats and prints arguments
- * @format: The format string specified in the arguments
- *
- * This function processes arguments and throws them to the stdout
- * using the Buffer Struct
- *
- * @format: The format string is a character that holdhe specifier with a
- * '%' character, and followed by a specific conversion character
- * (e.g., %s for strings, %i for integers)
- *
- * Return: The number of characters printed to the stdout.
+ * _printf - prints and input into the standard output
+ * @format: the format string
+ * Return: number of bytes printed
  */
 
 int _printf(const char *format, ...)
-{/* Number of characters printed to the standard output. */
-	int printed_chars;
+{
+	int sum = 0;
+	va_list ap;
+	char *p, *start;
 
-	va_list args;/*A list of variable arguments. */
-	/*struct PrintBuffer - Struct initialization*/
-	struct PrintBuffer pb;
+	params_t params = PARAMS_INIT;
 
-	pb.buf_index = 0;
-	va_start(args, format);/* Start processing variable arguments.*/
-	printed_chars = 0;
-	printed_chars = _elif(format, args, &pb);/*Process arguments.*/
+	va_start(ap, format);
 
-	if (pb.buf_index > 0)
-	{/* Flush the buffer if there are any remaining characters.*/
-		write(1, pb.buffer, pb.buf_index);
-		pb.buf_index = 0;/*reset the buffer index to 0*/
+	if (!format || (format[0] == '%' && !format[1]))/* checking for NULL char */
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	for (p = (char *)format; *p; p++)
+	{
+		init_params(&params, ap);
+		if (*p != '%')/*checking for the % specifier*/
+		{
+			sum += _putchar(*p);
+			continue;
+		}
+		start = p;
+		p++;
+		while (get_flag(p, &params)) /* while char at p is flag character */
+		{
+			p++; /* next character */
+		}
+		p = get_width(p, &params, ap);
+		p = get_precision(p, &params, ap);
+		if (get_modifier(p, &params))
+			p++;
+		if (!get_specifier(p))
+			sum += print_from_to(start, p,
+					params.l_modifier || params.h_modifier ? p - 1 : 0);
+		else
+			sum += get_print_func(p, ap, &params);
 	}
-	/*End processing variable arguments.*/
-	va_end(args);
-	return (printed_chars);
+	_putchar(BUF_FLUSH);
+	va_end(ap);
+	return (sum);
 }
