@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * get_print_func - finds the format function
+ * get_print_func - finds the function
+ * related to the format
  * @s: string of the format
  * @ap: argument pointer
  * @params: the parameters struct

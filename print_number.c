@@ -4,7 +4,6 @@
  * print_number - prints a number with options
  * @str: the base number as a string
  * @params: the parameter struct
- *
  * Return: chars printed
  */
 int print_number(char *str, params_t *params)

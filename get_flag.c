@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * get_flag - finds the flag functions
  * @s: the format string
@@ -10,25 +9,31 @@
 int get_flag(char *s, params_t *params)
 
 {
-	int i = 0;
+	int printed_chars = 0;
 
-	switch (*s)
+	if (!*s)
 	{
-		case '+':
-			i = params->plus_flag = 1;
-			break;
-		case ' ':
-			i = params->space_flag = 1;
-			break;
-		case '#':
-			i = params->hashtag_flag = 1;
-			break;
-		case '-':
-			i = params->minus_flag = 1;
-			break;
-		case '0':
-			i = params->zero_flag = 1;
-			break;
+		return (1);
 	}
-	return (i);
+	else if (*s == '+')
+	{
+		return (printed_chars = params->plus_flag = 1);
+	}
+	else if (*s == ' ')
+	{
+		return (printed_chars = params->space_flag = 1);
+	}
+	else if (*s == '#')
+	{
+		return (printed_chars = params->hashtag_flag = 1);
+	}
+	else if (*s == '-')
+	{
+		return (printed_chars = params->minus_flag = 1);
+	}
+	else if (*s == '0')
+	{
+		return (printed_chars = params->zero_flag = 1);
+	}
+	return (printed_chars);
 }

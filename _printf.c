@@ -1,13 +1,15 @@
 #include "main.h"
 /**
- * _printf - prints and input into the stdout
+ * _printf - recieves arguments, process them
+ * and prints them to the standard output
  * @format: the format string
- * Return: number of bytes printed
+ * @... other unspecified arguments
+ * Return: printed characters
  */
 
 int _printf(const char *format, ...)
 {
-	int sum = 0;
+	int printed_chars = 0;
 	va_list ap;
 	char *p, *start;
 
@@ -23,7 +25,7 @@ int _printf(const char *format, ...)
 		init_params(&params, ap);
 		if (*p != '%')/*checking for the % specifier*/
 		{
-			sum += _putchar(*p);
+			printed_chars += _putchar(*p);
 			continue;
 		}
 		start = p;
@@ -35,12 +37,12 @@ int _printf(const char *format, ...)
 		if (get_modifier(p, &params))
 			p++;
 		if (!get_specifier(p))
-			sum += print_from_to(start, p,
+			printed_chars += print_from_to(start, p,
 					params.l_modifier || params.h_modifier ? p - 1 : 0);
 		else
-			sum += get_print_func(p, ap, &params);
+			printed_chars += get_print_func(p, ap, &params);
 	}
 	_putchar(BUF_FLUSH);
 	va_end(ap);
-	return (sum);
+	return (printed_chars);
 }

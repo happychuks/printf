@@ -2,10 +2,10 @@
 
 /**
  * convert - converter function
- * @num: number
- * @base: base
- * @flags: argument flags
- * @params: paramater struct
+ * @num: number input
+ * @base: base specified
+ * @flags: argument flag to be used
+ * @params: paramaters struct
  *
  * Return: string
  */

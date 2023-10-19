@@ -1,10 +1,8 @@
 #include "main.h"
-
 /**
  * print_number_right_shift - prints a number with options
  * @str: the base number as a string
  * @params: the parameter struct
- *
  * Return: chars printed
  */
 int print_number_right_shift(char *str, params_t *params)

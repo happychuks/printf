@@ -2,10 +2,10 @@
 /**
  * get_specifier - finds the format function
  * @s: string to be formatted
- * Return: the number of bytes printed
+ * Return: specifier or NULL
  */
-int (*get_specifier(char *s))(va_list ap, params_t *params)
 
+int (*get_specifier(char *s))(va_list ap, params_t *params)
 {
 	specifier_t specifiers[] = {
 		{"c", print_char},
@@ -30,9 +30,7 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
 	while (specifiers[i].specifier)
 	{
 		if (*s == specifiers[i].specifier[0])
-		{
 			return (specifiers[i].f);
-		}
 		i++;
 	}
 	return (NULL);

@@ -4,9 +4,9 @@
  * print_rot13 - prints string in rot13 format by shifting char by 13
  * @ap: string
  * @params: the parameters struct
- *
  * Return: number bytes printed
  */
+
 int print_rot13(va_list ap, params_t *params)
 {
 	int i, index;

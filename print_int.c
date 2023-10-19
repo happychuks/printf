@@ -4,7 +4,6 @@
  * print_int - prints integer
  * @ap: argument pointer
  * @params: the parameters struct
- *
  * Return: number chars printed
  */
 

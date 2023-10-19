@@ -5,8 +5,9 @@
  * @s: the format string
  * @params: the parameters struct
  * @ap: the argument pointer
- * Return: pointer
+ * Return: a pointer
 */
+
 char *get_precision(char *s, params_t *params, va_list ap)
 {
 	int d = 0;

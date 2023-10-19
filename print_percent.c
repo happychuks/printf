@@ -1,10 +1,12 @@
 #include "main.h"
+
 /**
  * print_percent - prints the % character
  * @ap: argument pointer
  * @params: the parameters struct
  * Return: number chars printed
  */
+
 int print_percent(va_list ap, params_t *params)
 {
 	(void)ap;

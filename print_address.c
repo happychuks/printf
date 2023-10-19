@@ -4,7 +4,6 @@
  * print_address - prints address
  * @ap: argument pointer
  * @params: the parameters struct
- *
  * Return: bytes printed
  */
 int print_address(va_list ap, params_t *params)

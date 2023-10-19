@@ -8,15 +8,16 @@
  *
  * Return: number bytes printed
  */
+
 int print_from_to(char *start, char *stop, char *except)
 {
-	int sum = 0;
+	int printed_chars = 0;
 
 	while (start <= stop)
 	{
 		if (start != except)
-			sum += _putchar(*start);
+			printed_chars += _putchar(*start);
 		start++;
 	}
-	return (sum);
+	return (printed_chars);
 }

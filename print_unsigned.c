@@ -4,9 +4,9 @@
  * print_unsigned - prints unsigned integer numbers
  * @ap: argument pointer
  * @params: the parameters struct
- *
  * Return: bytes printed
  */
+
 int print_unsigned(va_list ap, params_t *params)
 {
 	unsigned long l;

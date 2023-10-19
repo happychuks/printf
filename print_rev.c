@@ -4,9 +4,9 @@
  * print_rev - prints string in reverse
  * @ap: string
  * @params: the parameters struct
- *
  * Return: number bytes printed
  */
+
 int print_rev(va_list ap, params_t *params)
 {
 	int len, sum = 0;
