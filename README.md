@@ -1,6 +1,6 @@
 # 0x11. C - printf
 
-## An ALX team project written by Happy Chukwuma and Adioz Daniel
+## An ALX team project written by Happy Felix Chukwuma and Adioz Daniel
 
 😇😇😇
 
